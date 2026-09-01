@@ -106,7 +106,13 @@
   function update(p) {
     if (vdur) {
       const t = Math.min(vdur - 0.05, p * vdur);
-      if (Math.abs(t - seekT) > 0.02 && film.readyState >= 1) {
+      /* UN SEEK A LA VEZ. Sin el gate !film.seeking se le piden al video 60+ busquedas
+         por segundo (rAF + cada evento de scroll) y cada asignacion CANCELA la anterior:
+         el video solo se refresca cuando alcanza a completar una => avanza a brincos.
+         Se compara contra currentTime REAL (no contra el ultimo pedido) para saber donde
+         esta de verdad; el rAF reintenta cada cuadro, asi que en cuanto termina el seek
+         se aplica la posicion MAS RECIENTE del scroll y no se pierde precision. */
+      if (!film.seeking && Math.abs(t - film.currentTime) > 0.02 && film.readyState >= 1) {
         try { film.currentTime = t; seekT = t; } catch (e) {}
       }
     }
