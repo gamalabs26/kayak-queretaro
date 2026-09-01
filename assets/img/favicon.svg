@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="14" fill="#143A3C"/>
+  <!-- remo -->
+  <line x1="20" y1="16" x2="46" y2="34" stroke="#C7A24E" stroke-width="3" stroke-linecap="round"/>
+  <ellipse cx="18" cy="14.5" rx="5" ry="3" transform="rotate(35 18 14.5)" fill="#C7A24E"/>
+  <!-- kayak -->
+  <path d="M8 38 Q32 30 56 38 Q32 46 8 38 Z" fill="#DCEEF0"/>
+  <!-- ondas -->
+  <path d="M10 50 Q16 46 22 50 T34 50 T46 50 T58 50" fill="none" stroke="#C7A24E" stroke-width="2.5" stroke-linecap="round" opacity=".85"/>
+</svg>
