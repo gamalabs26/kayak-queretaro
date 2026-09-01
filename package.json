@@ -1,0 +1,12 @@
+{
+  "name": "kayak-queretaro-landing",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Landing scroll-storytelling de Kayak Querétaro",
+  "scripts": {
+    "start": "serve -l tcp://0.0.0.0:$PORT ."
+  },
+  "dependencies": {
+    "serve": "^14.2.5"
+  }
+}

@@ -1,0 +1,21 @@
+# Kayak Querétaro — sitio estático (deploy de esta carpeta tal cual)
+[build]
+  publish = "."
+
+# El scroll del video ("scrub") necesita byte-serving (HTTP Range).
+# Netlify/Vercel/Cloudflare Pages lo soportan nativamente.
+[[headers]]
+  for = "/assets/video/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+    Accept-Ranges = "bytes"
+
+[[headers]]
+  for = "/assets/img/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/assets/js/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
